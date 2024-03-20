@@ -1,0 +1,72 @@
+package Task3;
+
+public class ATM {
+  public int Amount;
+public int bankBalance=1000;
+
+public  void Deposit(int Amount){
+    bankBalance+=Amount;
+}
+
+public void Withdraw(int Amount){
+    bankBalance-=Amount;
+}
+
+
+
+
+
+}
+package Task3;
+
+import java.util.Scanner;
+
+public class Test {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        ATM a = new ATM();
+        User_bank_account u = new User_bank_account();
+        System.out.println("~~~{ WELCOME }~~~");
+        System.out.print("Enter your name: ");
+        String nm = sc.nextLine();
+        System.out.print("Enter your PIN code: ");
+        int dg = sc.nextInt();
+
+        System.out.print("What do you want to do?\n(1) Withdraw Amount\t(2) Deposit Amount\t(3) Check balance:\t(0) Exit. ");
+        int sel = sc.nextInt();
+
+
+            switch (sel) {
+                case 1 :{
+                    System.out.print("Enter the amount: ");
+                    a.Withdraw(sc.nextInt());
+                    System.out.println("\nTransaction successful.");
+                }
+                    break;
+
+                case 2 : {
+                    System.out.print("Enter the amount: ");
+                    a.Deposit(sc.nextInt());
+                    System.out.println("\nTransaction successful.");
+                }
+                    break;
+
+                case 3 : {
+                    System.out.print("Balance= " + (u.bankBalance));
+                    System.out.println("\nSuccessful.");
+                }
+                    break;
+
+                default : {
+                    System.out.println("Invalid choice!");
+                }
+
+            }
+
+    }
+}
+package Task3;
+
+public class User_bank_account extends ATM{
+
+}
